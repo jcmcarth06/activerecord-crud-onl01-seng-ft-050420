@@ -65,15 +65,14 @@ def can_be_found_updated_and_saved
   Movie.create(title: "Awesome Flick")
   movie Movie.find_by(title: "Aweome Flick")
   movie.update(title: "Even Awesomer Flick")
-  __
   movie.save
 end
 
 def can_update_using_update_method
   # Update movie title to "Wat, huh?"
   Movie.create(title: "Wat?")
-  __
-  __
+  movie Movie.find_by(title: "Wat?")
+  movie.update(title: "Wat, Huh?")
 end
 
 def can_update_multiple_items_at_once
