@@ -1,5 +1,5 @@
 def can_be_instantiated_and_then_saved
-  movie = Movie.new 
+  movie = Movie.new
   movie.title = "This is a title."
   movie.save
 end
@@ -21,13 +21,13 @@ def can_be_created_in_a_block(args = {title: "Home Alone", release_date: 1990})
   end
 end
 def can_get_the_first_item_in_the_database
-  Movie.first 
+  Movie.first
 end
 def can_get_the_last_item_in_the_database
-  Movie.last 
+  Movie.last
 end
 def can_get_size_of_the_database
-  Movie.all.size 
+  Movie.all.size
 end
 def can_find_the_first_item_from_the_database_using_id
   Movie.find(1)
@@ -40,7 +40,7 @@ def can_find_by_multiple_attributes
   Movie.where(title: "Title", release_date: 2000, director: "Me").take
 end
 def can_find_using_where_clause_and_be_sorted
-  # For this test return all movies released after 2002 and ordered by 
+  # For this test return all movies released after 2002 and ordered by
   # release date descending
   Movie.where(release_date:2003..2020).order(release_date: :desc)
 end
@@ -67,11 +67,11 @@ end
 def can_destroy_a_single_item
   Movie.create(title: "That One Where the Guy Kicks Another Guy Once")
   movie = Movie.find_by(title: "That One Where the Guy Kicks Another Guy Once")
-  movie.destroy 
+  movie.destroy
 end
 def can_destroy_all_items_at_once
   10.times do |i|
     Movie.create(title: "Movie_#{i}")
   end
-  Movie.destroy_all 
+  Movie.destroy_all
 end
