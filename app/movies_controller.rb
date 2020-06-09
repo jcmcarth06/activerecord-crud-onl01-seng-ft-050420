@@ -28,6 +28,7 @@ Movie.create do |m|
   m.title = args[:title]
   m.release_date = args[:release_date]
 end
+end
 
 def can_get_the_first_item_in_the_database
   Movie.first
